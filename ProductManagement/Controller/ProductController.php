@@ -19,7 +19,12 @@ class ProductController
 
     public function getProductList()
     {
-        $products = $this->ProductDB->getProductList();
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['search'])) {
+            $query = $_GET['search'];
+            $products = $this->ProductDB->searchProduct($query);
+        } else {
+            $products = $this->ProductDB->getProductList();
+        }
         include 'View/productList.php';
     }
 

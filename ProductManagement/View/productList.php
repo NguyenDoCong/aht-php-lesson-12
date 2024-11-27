@@ -1,5 +1,15 @@
-<h2>Danh sách sản phẩm</h2>
-<a href="./index.php?page=add">Thêm mới</a>
+<div>
+    <h2>Danh sách sản phẩm</h2>
+    <a href="./index.php?page=add">Thêm mới</a>
+</div>
+<div>
+    <form action="" method="get">
+        <input type="hidden" name="page" value="todos">
+        <input type="text" id="search" name="search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>">
+        <input type="submit" value="Search">
+    </form>
+    <br>
+</div>
 <table class="table">
     <thead>
         <tr>
